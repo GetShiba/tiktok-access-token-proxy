@@ -24,4 +24,6 @@ app.post('/proxy/token', async (req, res) => {
   res.json(data.data);
 });
 
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, '0.0.0.0', function () {
+    console.log(`Listening on port ${PORT}`);
+});
