@@ -3,11 +3,11 @@ import fetch from 'node-fetch'
 
 const app = express();
 
-app.use(express.json()); 
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const TIKTOK_ACCESS_TOKEN_ENDPOINT = 'https://open-api.tiktok.com/oauth/access_token';
-const PORT = 3000;
+const PORT = 8080;
 
 app.post('/proxy/token', async (req, res) => {
   const params = new URLSearchParams({
