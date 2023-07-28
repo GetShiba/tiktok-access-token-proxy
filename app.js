@@ -4,24 +4,34 @@ import fetch from 'node-fetch'
 const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({extended: true}));
 
-const TIKTOK_ACCESS_TOKEN_ENDPOINT = 'https://open-api.tiktok.com/oauth/access_token';
+const TIKTOK_ACCESS_TOKEN_ENDPOINT = 'https://open.tiktokapis.com/v2/oauth/token/';
 const PORT = 8080;
 
 app.post('/proxy/token', async (req, res) => {
-  const params = new URLSearchParams({
-    client_key: req.body.client_id,
-    client_secret: req.body.client_secret,
-    code: req.body.code,
-    grant_type: 'authorization_code',
-  }).toString();
+    const params = new URLSearchParams({
+        client_key: req.body.client_id,
+        client_secret: req.body.client_secret,
+        code: req.body.code,
+        grant_type: 'authorization_code',
+        redirect_uri: req.body.redirect_uri
+    });
 
-  const url = `${TIKTOK_ACCESS_TOKEN_ENDPOINT}?${params}`;
-  const response = await fetch(url, { method: 'POST' });
-  const data = await response.json();
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Cache-Control': 'no-cache'
+        },
+        body: params
+    };
 
-  res.json(data.data);
+    const response = await fetch(TIKTOK_ACCESS_TOKEN_ENDPOINT, options);
+    const data = await response.json();
+    console.log('data', data);
+
+    res.json(data.data);
 });
 
 app.listen(PORT, '0.0.0.0', function () {
