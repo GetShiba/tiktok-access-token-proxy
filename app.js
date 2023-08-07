@@ -31,7 +31,7 @@ app.post('/proxy/token', async (req, res) => {
     const data = await response.json();
     console.log('data', data);
 
-    res.json(data.data);
+    res.json(data);
 });
 
 app.listen(PORT, '0.0.0.0', function () {

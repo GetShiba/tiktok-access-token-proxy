@@ -16,6 +16,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2T6zS7XQoOtC6UsQVhwouYbAecu" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -34,6 +37,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -45,7 +49,13 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1690378315456</updated>
-      <workItem from="1690378316675" duration="563000" />
+      <workItem from="1690378316675" duration="3212000" />
+      <workItem from="1690559671974" duration="1772000" />
+      <workItem from="1690575950080" duration="597000" />
+      <workItem from="1690578483850" duration="598000" />
+      <workItem from="1690722854256" duration="9000" />
+      <workItem from="1690840649150" duration="1244000" />
+      <workItem from="1691424468180" duration="230000" />
     </task>
     <servers />
   </component>
